@@ -35,19 +35,15 @@
         }
         sortPlanets();
     }
-
-    function getPlanetDetailUrl(id) {
-        return `#/planet/${id}`;
-    }
 </script>
 
 <table>
     <thead>
         <tr>
             <th on:click={() => handleSort("englishName")}>Name</th>
-            <th on:click={() => handleSort("semimajorAxis")}
-                >Semi-Major Axis (km)</th
-            >
+            <th on:click={() => handleSort("semimajorAxis")}>
+                Semi-Major Axis (km)
+            </th>
             <th on:click={() => handleSort("meanRadius")}>Mean Radius (km)</th>
             <th on:click={() => handleSort("gravity")}>Gravity (m/s²)</th>
             <th on:click={() => handleSort("sideralOrbit")}
@@ -59,9 +55,7 @@
         {#each sortedPlanets as planet}
             <tr>
                 <td>
-                    <a href={getPlanetDetailUrl(planet.id)}
-                        >{planet.englishName}</a
-                    >
+                    <a href={`#/planet/${planet.id}`}>{planet.englishName}</a>
                 </td>
                 <td>{planet.semimajorAxis}</td>
                 <td>{planet.meanRadius}</td>
